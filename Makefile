@@ -13,7 +13,7 @@ lint:
 	cargo clippy --quiet
 
 test:
-	cargo test --quiet
+	cargo test ./week1/*.toml --quiet
 
 run:
 	cargo run

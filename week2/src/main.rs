@@ -1,4 +1,4 @@
-/*Command-line interface for Marco Polo */
+/*Command-line interface for Simple Calculator */
 
 use clap::Parser;
 
@@ -7,7 +7,7 @@ use clap::Parser;
 #[clap(
     version = "1.0",
     author = "Yuzhou Zhao",
-    after_help = "Command-line interface for Marco Polo"
+    after_help = "Command-line interface for Simple Calculator"
 )]
 struct Cli {
     #[clap(subcommand)]
@@ -17,7 +17,7 @@ struct Cli {
 #[derive(Parser)]
 enum Commands {
     #[clap(version = "1.0", author = "Yuzhou Zhao")]
-    MarcoPolo {
+    Calculator {
         #[clap(short, long)]
         input: String,
     },
@@ -25,8 +25,8 @@ enum Commands {
 
 fn main() {
     let args = Cli::parse();
-    if let Some(Commands::MarcoPolo { input }) = args.command {
-        let result = week1::marco_polo(&input);
+    if let Some(Commands::calculate { input }) = args.command {
+        let result = week1::calculate(&input);
         println!("{}", result);
     } else {
         println!("No command was used")

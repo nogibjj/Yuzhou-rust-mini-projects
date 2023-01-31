@@ -2,7 +2,7 @@
 
 ## 0. Dependencies and Preparation
 
-install lambda first `pip install cargo-lambda`
+First, install lambda in your venv `pip install cargo-lambda`
 
 ## 1. Usage
 

@@ -27,7 +27,7 @@ fn calc(s: &Vec<char>, start: usize) -> (i32, usize) {
             let prev = stack.pop().unwrap();
             stack.push(prev / n)
         }
-        _ =>{}
+        _ => {}
     };
 
     let (mut num, mut sign) = (0i32, '+');

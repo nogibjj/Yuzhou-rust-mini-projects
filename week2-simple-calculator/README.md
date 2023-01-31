@@ -1,5 +1,9 @@
 # Mini Project week2
 
+## 0. Dependencies and Preparation
+
+install lambda first `pip install cargo-lambda`
+
 ## 1. Usage
 
 `cd week2-simple-calculator`

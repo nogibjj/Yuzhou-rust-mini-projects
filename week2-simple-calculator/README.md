@@ -1,9 +1,31 @@
 # Mini Project week2
 
-## 1. Build project
+## 0. Dependencies and Preparation
+
+First, install lambda in your venv `pip install cargo-lambda`
+
+## 1. Usage
 
 `cd week2-simple-calculator`
 
-`cargo run -- --help` This will show what your subcommand will look like
+To deploy: `make deploy` which runs: `cargo lambda build --release`
 
-`cargo run -- marco-polo --input "Marco"`
+Test locally with remote invoke on AWS lambda: `make invoke`
+
+```bash
+cargo lambda invoke --remote \
+        --data-ascii '{"expression": "1+2*5-(12/4+7*(1+2))"}' \
+        --output-format json \
+        week2
+```
+
+Result:
+```bash
+cargo lambda invoke --remote \
+        --data-ascii '{"expression": "1+2*5-(12/4+7*(1+2))"}' \
+        --output-format json \
+        week2
+{
+  "result": "-13"
+}
+```

@@ -12,13 +12,19 @@ format:
 lint:
 	cargo clippy --quiet
 
-test:
-	cargo test --quiet
+# run:
+# 	cargo run
+
+release-arm:
+	cargo lambda build --release --arm64
+
+deploy:
+	cargo lambda deploy
 
 run:
-	cargo run
+	cargo lambda invoke --remote \
+		--data-ascii '{"expression": "1+2*5-(12/4+7*(1+2))"}' \
+		--output-format json \
+		week2
 
-release:
-	cargo build --release
-
-all: format lint test run
+all: format lint run

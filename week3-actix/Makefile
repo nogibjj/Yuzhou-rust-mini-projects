@@ -6,6 +6,10 @@ rust-version:
 	rustup --version			#rust toolchain manager
 	clippy-driver --version		#rust linter
 
+install:
+	cargo clean &&\
+		cargo build -j 1
+
 format:
 	cargo fmt --quiet
 

@@ -1,34 +1,27 @@
-/*Command-line interface for Simple Calculator */
+/*An actix Microservice for Simple Calculator that has multiple routes:
+A. / that turns a hello world message
+B. /calculate/{string} that calculates the result of the string
+*/
 
-use clap::Parser;
+use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
 
-#[derive(Parser)]
-//add extended help
-#[clap(
-    version = "1.0",
-    author = "Yuzhou Zhao",
-    after_help = "Command-line interface for Simple Calculator"
-)]
-struct Cli {
-    #[clap(subcommand)]
-    command: Option<Commands>,
+//create a function that returns hello world
+#[get("/")]
+async fn hello() -> impl Responder {
+    HttpResponse::Ok().body("Hello World! Calculators are fun!")
 }
 
-#[derive(Parser)]
-enum Commands {
-    #[clap(version = "1.0", author = "Yuzhou Zhao")]
-    Calculator {
-        #[clap(short, long)]
-        input: String,
-    },
+//create a function that returns the result of the calculation
+#[get("/calculate/{input}")]
+async fn calculate(input: web::Path<String>) -> impl Responder {
+    let result = week3::calculate(input.to_string());
+    HttpResponse::Ok().body(result.to_string())
 }
 
-fn main() {
-    let args = Cli::parse();
-    if let Some(Commands::Calculator { input }) = args.command {
-        let result = week2::calculate(input);
-        println!("{}", result);
-    } else {
-        println!("No command was used")
-    }
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| App::new().service(hello).service(calculate))
+        .bind("0.0.0.0:8080")?
+        .run()
+        .await
 }

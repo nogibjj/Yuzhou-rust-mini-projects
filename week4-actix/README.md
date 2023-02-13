@@ -1,5 +1,6 @@
 # Mini Project week4: Actix containerized calculator
-Deployed on https://eeixxfhm34.us-east-1.awsapprunner.com/
+Deployed on: https://eeixxfhm34.us-east-1.awsapprunner.com/
+Usage: https://eeixxfhm34.us-east-1.awsapprunner.com/calculate/1+(2*3)
 
 ## Containerization
 1. In [lib.rs](https://github.com/nogibjj/Yuzhou-rust-mini-projects/blob/main/week4-actix/src/lib.rs), implement calculator logics 

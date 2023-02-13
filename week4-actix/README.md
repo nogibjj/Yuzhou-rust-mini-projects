@@ -2,9 +2,9 @@
 Deployed on https://eeixxfhm34.us-east-1.awsapprunner.com/
 
 ## Containerization
-1. In ![lib.rs](https://github.com/nogibjj/Yuzhou-rust-mini-projects/blob/main/week4-actix/src/lib.rs), implement calculator logics 
-2. In ![main.rs](https://github.com/nogibjj/Yuzhou-rust-mini-projects/blob/main/week4-actix/src/main.rs), implement APIs with actix_web
-3. In ![Dockerfile](https://github.com/nogibjj/Yuzhou-rust-mini-projects/blob/main/week4-actix/Dockerfile), configure containerization
+1. In [lib.rs](https://github.com/nogibjj/Yuzhou-rust-mini-projects/blob/main/week4-actix/src/lib.rs), implement calculator logics 
+2. In [main.rs](https://github.com/nogibjj/Yuzhou-rust-mini-projects/blob/main/week4-actix/src/main.rs), implement APIs with actix_web
+3. In [Dockerfile](https://github.com/nogibjj/Yuzhou-rust-mini-projects/blob/main/week4-actix/Dockerfile), configure containerization
 4. Build docker with ` docker build -t calculator .`
 5. Test docker containerized app with `docker run -p 8080:8080 calculator`
 

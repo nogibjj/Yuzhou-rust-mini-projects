@@ -11,27 +11,38 @@ Deployed on https://eeixxfhm34.us-east-1.awsapprunner.com/
 ## Deployment
 1. In AWS Elastic Container Registry (ECR), create new container repository `actix`
 2. Follow push commands inside newly created ECR repo, push our local docker image to `actix`
+
     i. Configure identification and authentication by running
         ```
         aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin {as shown in push commands}
         ```
         inside AWS Cloud9
+        
     ii. Build image of APP
         ```
         docker build -t actix .
         ```
+        
     iii. Tag local repo image `actix` with remote repo image `773627151292.dkr.ecr.us-east-1.amazonaws.com/actix:latest`
         ```
         docker tag actix:latest 773627151292.dkr.ecr.us-east-1.amazonaws.com/actix:latest
         ```
+        
     iv. Push your image to ECR repo
         ```
         docker push 773627151292.dkr.ecr.us-east-1.amazonaws.com/actix:latest
         ```
+        
 3. Deploy the containerized app in AWS App Runner
+
     i. Click `Create Service`
+    
     ii. Configure source with Amazon ECR, browse and choose image URI as the one you just pushed (`actix` here)
+    
     iii. Create our use role `AppRunnerECRAccessRole`
+    
     iv. Create and Deploy, done!!!
+    
+    
 
 

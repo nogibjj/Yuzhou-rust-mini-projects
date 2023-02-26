@@ -11,7 +11,7 @@ Usage: https://eeixxfhm34.us-east-1.awsapprunner.com/calculate/1+(2*3)
 5. Test docker containerized app with `docker run -p 8080:8080 calculator`
 
 ## Deployment on Kubernetes
-![Proof of minikube success](https://github.com/nogibjj/Yuzhou-rust-mini-projects/week6-actix-kubernetes/minikube_success.png)
+![Proof of minikube success](minikube_success.png)
 
 0. Prerequisite: make sure you have `docker`, `minikube` installed in machine
 

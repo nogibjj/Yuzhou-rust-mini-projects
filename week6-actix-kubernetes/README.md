@@ -1,4 +1,4 @@
-# Mini Project week4: Actix containerized calculator
+# Mini Project week6: Containerized Actix Calculator microservice deployed on Kubernetes
 Deployed on: https://eeixxfhm34.us-east-1.awsapprunner.com/
 
 Usage: https://eeixxfhm34.us-east-1.awsapprunner.com/calculate/1+(2*3)

@@ -23,7 +23,7 @@ fn calc(s: &Vec<char>, start: usize) -> (i32, usize) {
             let prev = stack.pop().unwrap();
             stack.push(prev * n)
         }
-        '/' => {
+        '%' => {
             let prev = stack.pop().unwrap();
             stack.push(prev / n)
         }
@@ -36,7 +36,7 @@ fn calc(s: &Vec<char>, start: usize) -> (i32, usize) {
         let ch = s[i];
         if ch.is_numeric() {
             num = num * 10 + ch.to_digit(10).unwrap() as i32;
-        } else if ch == '+' || ch == '-' || ch == '*' || ch == '/' {
+        } else if ch == '+' || ch == '-' || ch == '*' || ch == '%' {
             update(sign, num);
             num = 0;
             sign = ch;

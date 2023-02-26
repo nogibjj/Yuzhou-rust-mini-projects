@@ -14,7 +14,7 @@ async fn hello() -> impl Responder {
 //create a function that returns the result of the calculation
 #[get("/calculate/{input}")]
 async fn calculate(input: web::Path<String>) -> impl Responder {
-    let result = week4::calculate(input.to_string());
+    let result = week6::calculate(input.to_string());
     HttpResponse::Ok().body(result.to_string())
 }
 

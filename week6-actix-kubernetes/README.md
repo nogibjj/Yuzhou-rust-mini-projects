@@ -1,4 +1,4 @@
-# Mini Project week4: Actix containerized calculator
+# Mini Project week6: Containerized Actix Calculator microservice deployed on Kubernetes
 Deployed on: https://eeixxfhm34.us-east-1.awsapprunner.com/
 
 Usage: https://eeixxfhm34.us-east-1.awsapprunner.com/calculate/1+(2*3)
@@ -23,6 +23,8 @@ Usage: https://eeixxfhm34.us-east-1.awsapprunner.com/calculate/1+(2*3)
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
     ```
+    
+    And start a new codespace with .devcontainer/devcontainer.json as config file
 1.  Push container to DockerHub (Optional): i.e. 
 
 `docker login -u "myusername" -p "mypassword" docker.io` to login if haven't logged in in terminal

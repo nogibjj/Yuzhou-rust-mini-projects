@@ -35,7 +35,7 @@ If already built, tag with: `docker tag <already-built-image> <hub-user>/<repo-n
 
 If `docker push <hub-user>/<repo-name>:<tag>`
 
-Example of a pushed FastAPI container here:  https://hub.docker.com/repository/docker/yzwarren/rust-kube
+Example of a pushed Rust actix container here:  https://hub.docker.com/repository/docker/yzwarren/rust-kube
 
 2. `minikube start`
 3. `minikube dashboard --url`

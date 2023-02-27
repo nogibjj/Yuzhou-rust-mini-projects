@@ -11,7 +11,6 @@ Usage: https://eeixxfhm34.us-east-1.awsapprunner.com/calculate/1+(2*3)
 5. Test docker containerized app with `docker run -p 8080:8080 calculator`
 
 ## Deployment on Kubernetes
-![Proof of minikube success](minikube_success.png)
 
 0. Prerequisite: make sure you have `docker`, `minikube` installed in machine
 
@@ -47,7 +46,11 @@ Example of a pushed Rust actix container here:  https://hub.docker.com/repositor
 9.  `minikube service hello-actix --url`. This will show the url link to the webservice: i.e. http://192.168.49.2:30907
 10. Curl web service using the above url: i.e. `curl http://192.168.49.2:30907`
 11.  Use the calculator: `curl http://192.168.49.2:30907/calculate/1+3*25`. Result: `76`
-12. Cleanup
+![Proof of minikube success](minikube_success.png)
+12.  Forward the port from 8080 to local 8080: `kubectl port-forward service/hello-actix 8080:8080`
+![Proof of minikube success in browser](minikube_port_success.png)
+![Proof of minikube success in terminal log](minikube_port_terminal_success.png)
+13. Cleanup
 ```bash
 kubectl delete service hello-actix
 kubectl delete deployment hello-actix

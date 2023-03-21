@@ -1,4 +1,4 @@
-# Mini Project week1
+# Mini Project week7
 
 ## 1. Setup a Rust and Python interface
 
